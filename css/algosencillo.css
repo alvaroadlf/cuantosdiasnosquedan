@@ -1,0 +1,19 @@
+html, body { height: 100%; }
+
+body {
+display: flex;
+margin: 0;
+justify-content: center;
+align-items: center;
+font: .65% "Open Sans", sans-serif;
+color: #000;
+background: #fff;
+text-align: center;
+}
+
+h1 {
+margin: 0;
+font-weight: 300;
+font-size: 2rem;
+text-align: center;
+}

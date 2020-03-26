@@ -1,0 +1,11 @@
+RewriteEngine On
+
+DirectoryIndex index.html index.php
+
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^trippine\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.cuantosdiasnosquedan\.com$
+RewriteRule ^(.*)$ https://cuantosdiasnosquedan.com/$1 [R,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
