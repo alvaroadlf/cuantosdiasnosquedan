@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>¿Puedo salir de casa?</title>
+    <meta name="author" content="I'm Álvaro - https://imalvaro.com">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      html, body { height: 100%; }
+      body {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        font: .65% "Open Sans", sans-serif;
+        color: #000;
+        background: #fff;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: 300;
+        font-size: 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <script>
+        const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    let countDown = new Date('April 11, 2020 01:00:00').getTime(),
+        x = setInterval(function() {    
+
+        let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById('days').innerText = Math.floor(distance / (day)),
+            document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        //if (distance < 0) {
+        //  clearInterval(x);
+        //  'IT'S MY BIRTHDAY!;
+        //}
+
+        }, second)
+    </script>
+    <h1>Nos quedan <strong><span id="days"></span> días</strong>, <strong><span id="hours"></span> horas</strong>, <strong><span id="minutes"></span> minutos</strong> y <strong><span id="seconds"></span> segundos</strong> en casa.</h1>
+  </body>
+</html>
